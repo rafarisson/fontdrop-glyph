@@ -1,12 +1,20 @@
 # fontdrop-glyph
 
-Python script for generate glyph map
+This script extracts glyphs from a TTF font and generates JavaScript (JS) and/or QML files containing the icon mappings
+
+### Usage
 
 ```
-fontdrop-glyph.py --font "materialdesignicons-webfont.ttf" --out "materialdesignicons.js"
+python script.py --font <font_path> --format <format> --out <output_filename>
 ```
 
-Generated js for using in qml applications
+### Example
+
+```
+fontdrop-glyph.py --font=materialdesignicons-webfont.ttf --out=materialdesignicons --format=all
+```
+
+#### Using generated JS file:
 
 ```
 import QtQuick
@@ -30,5 +38,12 @@ MyButton {
     font.family: materialFont.name
     font.pixelSize: 24
 }
+```
 
+#### Using generated QML file:
+
+#### Dependencies
+
+```
+pip install fonttools
 ```
